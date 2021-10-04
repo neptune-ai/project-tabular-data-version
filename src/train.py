@@ -7,9 +7,9 @@ import xgboost as xgb
 from neptune.new.integrations.xgboost import NeptuneCallback
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-train_s3_path = "s3://kamil-projects/tabular-data/dataset-1/train/"
-valid_s3_path = "s3://kamil-projects/tabular-data/dataset-1/valid/"
-test_s3_path = "s3://kamil-projects/tabular-data/dataset-1/test/"
+train_s3_path = "s3://kamil-projects/tabular-data/dataset-2/train/"
+valid_s3_path = "s3://kamil-projects/tabular-data/dataset-2/valid/"
+test_s3_path = "s3://kamil-projects/tabular-data/dataset-2/test/"
 
 # (neptune) create run
 run = neptune.init(
