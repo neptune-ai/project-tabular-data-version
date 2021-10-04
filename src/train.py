@@ -7,8 +7,6 @@ import xgboost as xgb
 from neptune.new.integrations.xgboost import NeptuneCallback
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-base_namespace = "model_training"
-
 train_s3_path = "s3://kamil-projects/tabular-data/dataset-1/train/"
 valid_s3_path = "s3://kamil-projects/tabular-data/dataset-1/valid/"
 test_s3_path = "s3://kamil-projects/tabular-data/dataset-1/test/"
@@ -68,6 +66,8 @@ evals = [(dtrain, "train"), (dval, "valid")]
 num_round = 100
 
 # (neptune-xgboost integration) create neptune_callback to track XGBoost training
+base_namespace = "model_training"
+
 neptune_callback = NeptuneCallback(
     run=run,
     base_namespace=base_namespace,
