@@ -85,6 +85,8 @@ evals = [(dtrain, "train"), (dval, "valid")]
 num_round = 100
 
 # (neptune-xgboost integration) create neptune_callback to track XGBoost training
+base_namespace = "model_training"
+
 neptune_callback = NeptuneCallback(
     run=run,
     base_namespace=base_namespace,
