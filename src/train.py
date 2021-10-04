@@ -15,7 +15,7 @@ test_s3_path = "s3://kamil-projects/tabular-data/dataset-2/test/"
 run = neptune.init(
     project="common/project-tabular-data-version",
     tags=["training", "S3"],
-    source_files=["train.py", "environment.yml"],
+    source_files=["train.py"],
 )
 
 ##########################
@@ -54,11 +54,11 @@ dtest = xgb.DMatrix(X_test, label=y_test)
 
 # define parameters
 model_params = {
-    "eta": 0.3,
+    "eta": 0.2974,
     "gamma": 0.0001,
-    "max_depth": 2,
-    "colsample_bytree": 0.85,
-    "subsample": 0.9,
+    "max_depth": 5,
+    "colsample_bytree": 0.91,
+    "subsample": 0.91,
     "objective": "reg:squarederror",
     "eval_metric": ["mae", "rmse"],
 }
